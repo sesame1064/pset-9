@@ -104,30 +104,89 @@ public class Exercises {
 	public boolean increasing(ArrayList<Integer> numbers) {
 		// write your code here
 		
-		return false;	// default return value to ensure compilation
+		if(numbers == null || numbers.length < 3){
+			return false;	// default return value to ensure compilation
+		}
+		for(int i = 0; i < numbers.length - 2; i++){
+			if(numbers[i] < numbers[i + 1] && numbers[i + 1] < numbers[i + 2]){
+				return true;
+			}
+		}
+		return false;
 	}
 	
 	public boolean everywhere(ArrayList<Integer> numbers, int x) {
 		// write your code here
 		
-		return false;	// default return value to ensure compilation
+		if(numbers == null || numbers.length < 2){
+			return false;
+		}
+		for(int i = 1; i < numbers.length - 1; i++){
+			if(!(numbers[i] == x || numbers[i - 1] == x || numbers[i + 1] == x)){
+				return false;
+			}
+		}
+		return true;
 	}
 	
 	public boolean consecutive(ArrayList<Integer> numbers) {
 		// write your code here
 		
+		if(numbers == null || numbers.length < 3){
+			return false;
+		}
+		for(int i = 1; i < numbers.length - 1; i++){
+			if(numbers[i - 1] % 2 == 0 && numbers[i] % 2 == 0 && numbers[i + 1] % 2 == 0){
+				return true;
+			}
+		}  
+		for(int y = 1; y < numbers.length -1; y++){
+			if(numbers[y - 1] % 2 != 0 && numbers[y] % 2 != 0 && numbers[y + 1] % 2 != 0){
+				return true;
+			}
+		}
 		return false;	// default return value to ensure compilation
 	}
 	
 	public boolean balance(ArrayList<Integer> numbers) {
 		// write your code here
 		
+		if(numbers == null || numbers.length < 2){
+			return false;
+		}
+		for(int i = 1; i < numbers.length; i++){
+			int[] first = Arrays.copyOfRange(numbers, 0, i);
+			int[] second = Arrays.copyOfRange(numbers, i, numbers.length);
+			int x = 0;
+			int y = 0;
+			for(int j = 0; j < first.length; j++){
+				x += first[j];
+			}
+			for(int j = 0; j < second.length; j++){
+				y += second[j];
+			}
+			if(x == y){
+				return true;
+			} 
+		}
 		return false;	// default return value to ensure compilation
 	}
 	
 	public int clumps(ArrayList<String> values) {
 		// write your code here
 		
-		return -1;		// default return value to ensure compilation
+		if (values == null) return -1;
+		for (String word : values) {
+			if (word == null) return -1;
+		}
+		int output = 0; boolean in = false;
+		for (int i = 1; i < values.length; i++) {
+			if (values[i].equals(values[i - 1])) {
+				if (!in) {
+					in = true;
+					output++;
+				}
+			} else in = false;
+		} return output;
 	}
 }
