@@ -26,12 +26,12 @@ public class Exercises {
 
 		ArrayList<String> finalArray = new ArrayList<>();
 		
-		for(int i = 0l i < n; i++){
+		for(int i = 0; i < n; i++){
 			finalArray.add(values.get(i));
 		}
 		int ind = n;
 
-		for(int x; x < (n * 2); x++){
+		for(int x = n; x < (n * 2); x++){
 			finalArray.add(values.get(values.size() - ind));
 			ind--;
 		}
