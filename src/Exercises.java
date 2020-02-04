@@ -8,14 +8,34 @@ public class Exercises {
 		}
 		
 		// write your code here
+		int lastIndA = a.size() - 1;
+		int lastIndB = b.size() - 1; 
+		if(a.get(0) == b.get(0) || a.get(lastIndA) == b.get(lastIndB)){
+			return true;
+		}
 		
 		return false;	// default return value to ensure compilation
 	}
 	
 	public ArrayList<String> endsMeet(ArrayList<String> values, int n) {
 		// write your code here
+
+		if(values == null || n < 0 || values.size() < n){
+			return new ArrayList<String>();
+		}
+
+		ArrayList<String> finalArray = new ArrayList<>();
 		
-		return null;	// default return value to ensure compilation
+		for(int i = 0l i < n; i++){
+			finalArray.add(values.get(i));
+		}
+		int ind = n;
+
+		for(int x; x < (n * 2); x++){
+			finalArray.add(values.get(values.size() - ind));
+			ind--;
+		}
+		return finalArray;
 	}
 	
 	public int difference(ArrayList<Integer> numbers) {
