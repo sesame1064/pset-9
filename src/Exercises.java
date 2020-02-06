@@ -117,7 +117,7 @@ public class Exercises {
 	
 	public boolean everywhere(ArrayList<Integer> numbers, int x) {
 		// write your code here
-		
+		//adjacent to every other element 
 		if(numbers == null || numbers.size() < 2){
 			return false;
 		}
@@ -131,7 +131,8 @@ public class Exercises {
 	
 	public boolean consecutive(ArrayList<Integer> numbers) {
 		// write your code here
-		
+		//Given an ArrayList of Integers, numbers, return true if it is possible to 
+		//split the ArrayList so that the sum of the left half is equal to the sum of the right half. 
 		if(numbers == null || numbers.size() < 3){
 			return false;
 		}
