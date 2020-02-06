@@ -151,7 +151,7 @@ public class Exercises {
 	
 	public boolean balance(ArrayList<Integer> numbers) {
 		// write your code here
-		
+		/////////
 		if(numbers == null || numbers.size() < 2){
 			return false;
 		}
@@ -174,7 +174,7 @@ public class Exercises {
 
 	public int clumps(ArrayList<String> values) {
 		// write your code here
-		/////////
+
 		if (values == null) return -1;
 		for (String word : values) {
 			if (word == null) return -1;
