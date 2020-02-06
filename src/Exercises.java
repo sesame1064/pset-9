@@ -117,7 +117,7 @@ public class Exercises {
 	
 	public boolean everywhere(ArrayList<Integer> numbers, int x) {
 		// write your code here
-		//adjacent to every other element 
+
 		if(numbers == null || numbers.size() < 2){
 			return false;
 		}
@@ -151,7 +151,7 @@ public class Exercises {
 	
 	public boolean balance(ArrayList<Integer> numbers) {
 		// write your code here
-		/////////
+
 		if(numbers == null || numbers.size() < 2){
 			return false;
 		}
