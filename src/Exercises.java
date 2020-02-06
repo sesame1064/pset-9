@@ -104,25 +104,24 @@ public class Exercises {
 	public boolean increasing(ArrayList<Integer> numbers) {
 		// write your code here
 		
-		if(numbers == null || numbers.length < 3){
+		if(numbers == null || numbers.size() < 3){
 			return false;	// default return value to ensure compilation
 		}
-		for(int i = 0; i < numbers.length - 2; i++){
-			if(numbers[i] < numbers[i + 1] && numbers[i + 1] < numbers[i + 2]){
-				return true;
-			}
-		}
-		return false;
+		for (int i = 0; i < numbers.size() - 2; i++) {
+			if (numbers.get(i) < numbers.get(i + 1) && numbers.get(i + 1) < numbers.get(i + 2)) return true;
+		} return false;
+
+
 	}
 	
 	public boolean everywhere(ArrayList<Integer> numbers, int x) {
 		// write your code here
 		
-		if(numbers == null || numbers.length < 2){
+		if(numbers == null || numbers.size() < 2){
 			return false;
 		}
-		for(int i = 1; i < numbers.length - 1; i++){
-			if(!(numbers[i] == x || numbers[i - 1] == x || numbers[i + 1] == x)){
+		for(int i = 1; i < numbers.size() - 1; i++){
+			if(!(numbers.get(i) == x || numbers.get(i - 1) == x || numbers.get(i + 1) == x)){
 				return false;
 			}
 		}
@@ -132,16 +131,16 @@ public class Exercises {
 	public boolean consecutive(ArrayList<Integer> numbers) {
 		// write your code here
 		
-		if(numbers == null || numbers.length < 3){
+		if(numbers == null || numbers.size() < 3){
 			return false;
 		}
-		for(int i = 1; i < numbers.length - 1; i++){
-			if(numbers[i - 1] % 2 == 0 && numbers[i] % 2 == 0 && numbers[i + 1] % 2 == 0){
+		for(int i = 1; i < numbers.size() - 1; i++){
+			if(numbers.get(i - 1) % 2 == 0 && numbers.get(i) % 2 == 0 && numbers.get(i + 1) % 2 == 0){
 				return true;
 			}
 		}  
-		for(int y = 1; y < numbers.length -1; y++){
-			if(numbers[y - 1] % 2 != 0 && numbers[y] % 2 != 0 && numbers[y + 1] % 2 != 0){
+		for(int y = 1; y < numbers.size() -1; y++){
+			if(numbers.get(y - 1) % 2 != 0 && numbers.get(y) % 2 != 0 && numbers.get(y + 1) % 2 != 0){
 				return true;
 			}
 		}
@@ -151,24 +150,23 @@ public class Exercises {
 	public boolean balance(ArrayList<Integer> numbers) {
 		// write your code here
 		
-		if(numbers == null || numbers.length < 2){
+		if(numbers == null || numbers.size() < 2){
 			return false;
 		}
-		for(int i = 1; i < numbers.length; i++){
-			int[] first = Arrays.copyOfRange(numbers, 0, i);
-			int[] second = Arrays.copyOfRange(numbers, i, numbers.length);
-			int x = 0;
-			int y = 0;
-			for(int j = 0; j < first.length; j++){
-				x += first[j];
+			for (int x = 1; x < numbers.size(); x++){
+				int a = 0; 
+				int b = 0;
+
+				for(int y = 0; y < x; y++){
+					a += numbers.get(y);
+				}
+				for(int z = x; z < numbers.size(); z++){
+					b += numbers.get(z);
+				}
+				if(a == b){
+					return true;
+				}
 			}
-			for(int j = 0; j < second.length; j++){
-				y += second[j];
-			}
-			if(x == y){
-				return true;
-			} 
-		}
 		return false;	// default return value to ensure compilation
 	}
 	
@@ -180,8 +178,8 @@ public class Exercises {
 			if (word == null) return -1;
 		}
 		int output = 0; boolean in = false;
-		for (int i = 1; i < values.length; i++) {
-			if (values[i].equals(values[i - 1])) {
+		for (int i = 1; i < values.size(); i++) {
+			if (values.get(i).equals(values.get(i - 1))) {
 				if (!in) {
 					in = true;
 					output++;
