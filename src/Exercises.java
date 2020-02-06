@@ -83,7 +83,7 @@ public class Exercises {
 	
 	public ArrayList<String> middle(ArrayList<String> values) {
 		// write your code here
-		
+		//easy to add values to array without making one and setting size
 		if(values == null || values.size() < 3 || values.size() % 2 == 0){
 			return new ArrayList<String>();	// default return value to ensure compilation
 		}else{
