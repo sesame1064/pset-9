@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 
 public class Exercises {
+	//uses .get() and .size()
 
 	public boolean commonEnd(ArrayList<Integer> a, ArrayList<Integer> b) {
 		if (a == null || a.isEmpty() || b == null || b.isEmpty()) {
@@ -169,7 +170,7 @@ public class Exercises {
 			}
 		return false;	// default return value to ensure compilation
 	}
-	//////
+
 	public int clumps(ArrayList<String> values) {
 		// write your code here
 		
